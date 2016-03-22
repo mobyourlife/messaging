@@ -10,12 +10,12 @@ module.exports = FacebookChannel
  * Facebook integration channel.
  */
 function FacebookChannel () {
+  // Initialise BackSync service
+  let sync = new BackSync()
+
   // Setup Channel
   this.channelName = 'mob#facebook'
-  this.executeMessage = syncObject.bind(this)
-
-  // Initialise BackSync service
-  this.sync = new BackSync()
+  this.executeMessage = syncObject.bind(sync)
 
   /**
    * Start BackSync service.
@@ -37,5 +37,5 @@ function FacebookChannel () {
  * @param  {Object} data Object to be synchronised.
  */
 function syncObject (data) {
-  this.sync.enqueue(data)
+  this.enqueue(data)
 }
