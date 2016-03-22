@@ -10,8 +10,7 @@ module.exports = FacebookChannel
  */
 function FacebookChannel () {
   this.channelName = 'mob#facebook'
-
-  this.executeMessage = syncObject.bind(this)
+  this.executeMessage = syncObject
 }
 
 /**
