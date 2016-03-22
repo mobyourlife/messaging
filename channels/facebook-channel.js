@@ -1,6 +1,7 @@
 'use strict'
 
 // Load modules
+const BackSync = require('mob-backsync')
 
 // Exports module's entry point
 module.exports = FacebookChannel
@@ -9,8 +10,26 @@ module.exports = FacebookChannel
  * Facebook integration channel.
  */
 function FacebookChannel () {
+  // Setup Channel
   this.channelName = 'mob#facebook'
-  this.executeMessage = syncObject
+  this.executeMessage = syncObject.bind(this.bs)
+
+  // Initialise BackSync service
+  this.bs = new BackSync()
+
+  /**
+   * Start BackSync service.
+   */
+  this.start = () => {
+    bs.start()
+  }
+
+  /**
+   * Stop BackSync service.
+   */
+  this.stop = () => {
+    bs.stop()
+  }
 }
 
 /**
