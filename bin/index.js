@@ -24,7 +24,11 @@ client.on('message', listenMessages)
 var keys = Object.keys(channels)
 for (var i of keys) {
   let ch = channels[i]
-  ch.start()
+
+  if (ch.start) {
+    ch.start()
+  }
+
   log.info(`Listening to channel ${ch.channelName}`)
   client.subscribe(ch.channelName)
 }
