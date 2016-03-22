@@ -3,11 +3,8 @@
   "version": "4.0.0",
   "description": "Messaging back-end layer to delegate long running tasks.",
   "main": "index.js",
-  "bin": {
-    "mob-messaging": "index.js"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard"
   },
   "repository": {
     "type": "git",
@@ -21,9 +18,12 @@
     "queue"
   ],
   "author": "Filipe Oliveira <contato@fmoliveira.com.br>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/mobyourlife/v4-messaging/issues"
   },
-  "homepage": "https://github.com/mobyourlife/v4-messaging#readme"
+  "homepage": "https://github.com/mobyourlife/v4-messaging#readme",
+  "devDependencies": {
+    "standard": "^6.0.8"
+  }
 }
