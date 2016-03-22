@@ -49,6 +49,7 @@ function listenMessages (channelName, messageBody) {
 
     try {
       ch.executeMessage(data)
+      log.info(`Message passed successfully to channel "${channelName}"! Message body: "${messageBody}".`)
     } catch (e) {
       log.error(`Error from channel "${channelName}": ${e.message}! Received message: "${messageBody}".`)
     }
